@@ -107,6 +107,7 @@ DR1801a6i::~DR1801a6i()
         delete[] arrContact;
 }
 
+
 #ifdef QT_CORE_LIB
 void DR1801a6i::setCallbackMessage(void(*cb)(QString, void *) , void *ctx)
 #else
@@ -116,6 +117,7 @@ void DR1801a6i::setCallbackMessage(void(*cb)(const char*, void *) , void *ctx)
     this->ctx = ctx;
     this->_cb = cb;
 }
+
 
 #ifdef QT_CORE_LIB
 void DR1801a6i::sendMsg(QString s){
@@ -130,13 +132,12 @@ void DR1801a6i::sendMsg(std::string s){
 }
 #endif
 
+
 // *** Return count of Contacts ***
 int DR1801a6i::getContactLen()
 {
     return arrContactLen;
 }
-
-
 
 
 // *** Get one record of Contacts table ***
@@ -199,7 +200,6 @@ bool DR1801a6i::check_accpsConsist(const char *fileN)
     in_file.close();
     return ret;
 }
-
 
 
 // *** Read .accps file ***
@@ -268,10 +268,6 @@ bool DR1801a6i::read_accps(const char* fileN)
 }
 
 
-
-
-
-
 // *** Find delimiter character ***
 int DR1801a6i::findDelimiterMax(std::string delim, std::string s){
     int found;
@@ -288,30 +284,6 @@ int DR1801a6i::findDelimiterMax(std::string delim, std::string s){
     }
     return cnt;
 }
-
-
-/*
-void DR1801a6i::removeCharsFromString(std::string& str, const char* charsToRemove)
-{
-    size_t charsToRemoveLen = strlen(charsToRemove);
-    std::remove_if(str.begin(), str.end(), [charsToRemove, charsToRemoveLen](char ch) -> bool
-        {
-            for (int i = 0; i < (int)charsToRemoveLen; ++i) {
-                if (ch == charsToRemove[i])
-                    return true;
-            }
-            return false;
-        });
-}
-*/
-
-
-
-
-
-
-
-
 
 
 // *** Read data from CSV ***
@@ -510,8 +482,6 @@ bool DR1801a6i::chkTGxxx(std::string call){
 }
 
 
-
-
 // *** Write data to CSV ***
 bool DR1801a6i::write_csv(const char* fileN, bool withN, std::string delim){
     if (delim.length()==0)
@@ -569,9 +539,6 @@ bool DR1801a6i::write_csv(const char* fileN, bool withN, std::string delim){
     out_file.close();
     return true;
 }
-
-
-
 
 
 // *** Write data to accps ***
