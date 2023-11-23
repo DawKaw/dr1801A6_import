@@ -51,8 +51,6 @@ FORMS += \
 # lrelease dr1801A6_import.pro
 
 # Create language files on Win os
-# cd C:\Users\d.kowalczyk\Documents\QT\dr1801A6_import
-
 # C:\Qt\Qt5.12.10\5.12.10\mingw73_32\bin\lupdate.exe -verbose -noobsolete dr1801A6_import.pro
 # C:\Qt\Qt5.12.10\5.12.10\mingw73_32\bin\linguist.exe dr1801A6_import_pl_PL.ts
 # C:\Qt\Qt5.12.10\5.12.10\mingw73_32\bin\linguist.exe dr1801A6_import_de_DE.ts
